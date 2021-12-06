@@ -51,10 +51,10 @@ func main() {
 		newFishMap = map[int]int{}
 		for key, value := range fishMap {
 			if key == 0 {
-				newFishMap[6] = newFishMap[6] + value
-				newFishMap[8] = newFishMap[8] + value
+				newFishMap[6] += value
+				newFishMap[8] = value
 			} else {
-				newFishMap[key-1] = newFishMap[key-1] + value
+				newFishMap[key-1] += value
 			}
 		}
 		fishMap = newFishMap
