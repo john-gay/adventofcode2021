@@ -6,9 +6,12 @@ import (
 	"log"
 	"os"
 	"strconv"
+	"time"
 )
 
 func main() {
+	start := time.Now()
+
 	file, err := os.Open("day6/input.txt")
 	if err != nil {
 		log.Fatal(err)
@@ -64,4 +67,7 @@ func main() {
 		count = count + value
 	}
 	fmt.Println(fmt.Sprintf("Number of fish: %d", count))
+
+	elapsed := time.Since(start)
+	log.Printf("Binomial took %s", elapsed)
 }
